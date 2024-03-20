@@ -1,0 +1,11 @@
+
+.select__indicator-separator{
+    display: none;
+}
+.select__single-value{
+    color: var(--colors-text) !important;
+}
+.select__menu{
+    background-color: var(--colors-ui-base) !important;
+}
+
