@@ -8,7 +8,6 @@ import { ALL_COUNTRIES } from '../../config';
 
 const HomePage = ({countries ,setCountries}) => {
     const [filteredCountries, setFilteredCountries] = useState([])
-    console.log(filteredCountries)
     const handleSearch = (search, region) => {
         let data = [...countries]
 
@@ -30,17 +29,11 @@ const HomePage = ({countries ,setCountries}) => {
                     setCountries(data);
                     setFilteredCountries(data); // Обновляем filteredCountries при получении новых данных
                 })
-                .catch(error => console.error('Error fetching countries:', error));
         } else {
             // Если уже есть данные о странах, установим их для отображения
             setFilteredCountries(countries);
         }
     }, [countries, setCountries]); 
-    // useEffect(() => {
-    //     if(!countries.length)
-    //     axios.get(ALL_COUNTRIES).then(({ data }) => setCountries(data))
-    // }, [])
-    // console.log('filteredCountries', filteredCountries)
 
     return (
         <>
